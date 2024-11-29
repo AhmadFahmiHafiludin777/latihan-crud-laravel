@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('konten')
+
 <div class="d-flex">
     <h4>List Siswa</h4>
     <div class="ms-auto">  
@@ -17,6 +18,7 @@
         <th>Jenis Kelamin</th>
         <th>Hobi</th>
         <th>Aksi</th>
+        <th>Image</th>
         
     </tr>
     @foreach ($siswa as $no=>$data)
@@ -29,10 +31,13 @@
         <td>{{ $data->jenis_kelamin }}</td>
         <td>{{ $data->hobi }}</td>
         <td>
+            <img src="{{ asset($data->image) }}" alt="{{ $data->name }}">
+        </td>
+        <td>
             <a href="{{ route('siswa.edit', $data->id) }}" class="btn btn-sm btn-warning">Edit</a>
             <form action="{{ route('siswa.delete', $data->id) }}" method="post">
                 @csrf
-                <button class="btn btn-sm btn-danger">
+                <button id="delete" class="btn btn-sm btn-danger">
                     Hapus
                 </button>
             </form>

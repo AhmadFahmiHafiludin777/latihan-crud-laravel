@@ -3,7 +3,7 @@
 @section('konten')
 <h4>Tambah Siswa</h4>
 
-<form action="{{ route('siswa.submit') }}" method="post">
+<form action="{{ route('siswa.submit') }}" method="post" enctype="multipart/form-data">
     @csrf
     <label>NIS</label>
     <input type="number" name="nis" class="form-control mb-2">
@@ -17,8 +17,10 @@
     <input type="text" name="jenis_kelamin" class="form-control mb-2">
     <label">Hobi</label>
     <input type="text" name="hobi" class="form-control mb-2">
+    <label for="image">Image:</label>
+    <input type="file" name="image" id="image">
 
-    <button class="btn btn-primary">Tambah</button>
+    <button id="tambah" class="btn btn-primary">Tambah</button>
 </form>
     
 @endsection

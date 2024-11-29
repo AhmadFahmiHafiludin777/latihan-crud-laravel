@@ -16,9 +16,10 @@ return new class extends Migration
             $table->string('nis');
             $table->string('nama');
             $table->string('alamat');
-            $table->string('no_telp');
-            $table->string('jenis_kelamin');
-            $table->string('hobi');
+            $table->string('no_telp')->nullable();
+            $table->string('jenis_kelamin')->nullable();
+            $table->string('hobi')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
